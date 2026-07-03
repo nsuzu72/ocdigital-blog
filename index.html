@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orange County Digital — Business Growth Insights</title>
+  <meta name="description" content="Actionable advice for local business owners on customer communication, AI tools, and digital presence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #cbd5e1; }
+    .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #f8fafc; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.025em; }
+    .article-body h3 { font-family: 'Inter', sans-serif; font-size: 1.125rem; font-weight: 600; color: #f1f5f9; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .article-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-body ul li { margin-bottom: 0.5rem; color: #cbd5e1; line-height: 1.7; }
+    .article-body ul li::marker { color: #0ea5e9; }
+    .article-body blockquote { border-left: 3px solid #0ea5e9; padding-left: 1.25rem; margin: 2rem 0; font-style: italic; color: #94a3b8; }
+    .article-body a { color: #38bdf8; text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s; }
+    .article-body a:hover { color: #7dd3fc; }
+    .page-transition { animation: fadeIn 0.3s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .card-hover { transition: border-color 0.15s, box-shadow 0.15s, transform 0.3s; }
+    .card-hover:hover { border-color: #334155; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .img-zoom img { transition: transform 0.7s ease; }
+    .img-zoom:hover img { transform: scale(1.05); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-50 font-sans">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 h-20 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-sm">OC</span>
+        </div>
+        <div>
+          <span class="text-sm font-semibold tracking-tight text-white">Orange County Digital</span>
+          <span class="hidden sm:block text-[10px] uppercase tracking-widest text-slate-500 font-medium -mt-0.5">Business Growth Insights</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" class="nav-link text-sm text-slate-400 hover:text-white transition-colors duration-150">Home</a>
+        <a href="#article-1" class="nav-link text-sm text-slate-400 hover:text-white transition-colors duration-150">Articles</a>
+        <a href="#about" class="nav-link text-sm text-slate-400 hover:text-white transition-colors duration-150">About</a>
+        <a href="#contact" class="nav-link text-sm text-slate-400 hover:text-white transition-colors duration-150">Contact</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#home" class="mobile-nav text-sm text-slate-400 hover:text-white transition-colors py-2">Home</a>
+        <a href="#article-1" class="mobile-nav text-sm text-slate-400 hover:text-white transition-colors py-2">Articles</a>
+        <a href="#about" class="mobile-nav text-sm text-slate-400 hover:text-white transition-colors py-2">About</a>
+        <a href="#contact" class="mobile-nav text-sm text-slate-400 hover:text-white transition-colors py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HOME PAGE ============ -->
+  <div id="page-home" class="page">
+    <!-- Hero -->
+    <section class="relative min-h-[700px] h-screen flex items-center justify-center pt-20">
+      <div class="absolute inset-0">
+        <img src="https://picsum.photos/seed/ocd-hero-office/1920/1080.jpg" alt="" class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-sky-400 mb-6">Insights for Local Business Owners</span>
+        <h1 class="text-4xl md:text-6xl font-serif font-400 tracking-tight leading-[1.1] mb-6">
+          Stop Losing Customers<br>
+          <span class="text-sky-400">You Never Knew You Had</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10">
+          Practical strategies on customer communication, AI-powered tools, and digital presence — written for business owners who are tired of leaving money on the table.
+        </p>
+        <a href="#article-1" class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-3.5 text-sm font-semibold rounded-lg hover:bg-sky-50 transition-colors duration-150">
+          Read Latest Articles
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+      </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-24 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-16">
+          <span class="text-xs font-semibold uppercase tracking-widest text-sky-400 mb-4 block">Latest Articles</span>
+          <h2 class="text-3xl md:text-4xl font-serif tracking-tight mb-4">What We're Writing About</h2>
+          <p class="text-slate-400 leading-relaxed">No fluff. No jargon. Just straightforward advice you can act on this week to improve how your business connects with customers.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <a href="#article-1" class="group card-hover bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden">
+            <div class="img-zoom overflow-hidden aspect-[4/3]">
+              <img src="https://picsum.photos/seed/ocd-missed-calls/800/600.jpg" alt="Two people standing on gray tile paving" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Communication</span>
+                <span class="text-slate-600">·</span>
+                <span class="text-xs text-slate-500">5 min read</span>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-sky-400 transition-colors duration-150">Why Most Local Businesses Lose Customers Before They Even Answer</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">Discover how missed calls, slow responses, and outdated communication systems quietly cost businesses new customers every week.</p>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="#article-2" class="group card-hover bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden">
+            <div class="img-zoom overflow-hidden aspect-[4/3]">
+              <img src="https://picsum.photos/seed/ocd-ai-laptops/800/600.jpg" alt="People sitting with laptop computers" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">AI & Automation</span>
+                <span class="text-slate-600">·</span>
+                <span class="text-xs text-slate-500">6 min read</span>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-sky-400 transition-colors duration-150">How AI Is Changing Customer Service for Small Businesses</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">See how AI-powered receptionists, automated follow-ups, and instant responses help businesses provide better service without increasing payroll.</p>
+            </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="#article-3" class="group card-hover bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden">
+            <div class="img-zoom overflow-hidden aspect-[4/3]">
+              <img src="https://picsum.photos/seed/ocd-website-mistakes/800/600.jpg" alt="Website on a screen" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Web Presence</span>
+                <span class="text-slate-600">·</span>
+                <span class="text-xs text-slate-500">7 min read</span>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-sky-400 transition-colors duration-150">Five Website Mistakes That Drive Potential Customers Away</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">Learn the most common issues that hurt conversions, from slow loading times to confusing layouts, and how small improvements make a big impact.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / CTA -->
+    <section class="py-24 px-6 bg-slate-800/30 border-y border-slate-800">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-sky-400 mb-4 block">Stay Ahead</span>
+        <h2 class="text-3xl md:text-4xl font-serif tracking-tight mb-4">Get These Insights in Your Inbox</h2>
+        <p class="text-slate-400 leading-relaxed mb-8">One email per week. No spam. Unsubscribe anytime. Just actionable advice for growing your local business.</p>
+        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" id="newsletter-email" placeholder="you@yourbusiness.com" required class="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
+          <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 text-sm font-semibold rounded-lg transition-colors duration-150 whitespace-nowrap">Subscribe</button>
+        </form>
+        <p id="newsletter-msg" class="text-sm text-sky-400 mt-3 hidden"></p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-sky-400 mb-4 block">About Us</span>
+          <h2 class="text-3xl md:text-4xl font-serif tracking-tight mb-6">We Help Local Businesses Capture Every Opportunity</h2>
+          <div class="space-y-4 text-slate-400 leading-relaxed">
+            <p>Orange County Digital helps local businesses stop losing customers to missed calls, slow follow-ups, and poor online presence. We specialize in AI-powered receptionists and automated SMS systems that ensure every lead gets an immediate, professional response — whether you're on the job, in a meeting, or after hours.</p>
+            <p>This blog is our way of sharing what we've learned working with businesses across Orange County and beyond. Every article is written with one goal: give you information you can actually use to grow.</p>
+          </div>
+          <div class="grid grid-cols-3 gap-6 mt-10">
+            <div>
+              <div class="text-2xl font-bold text-white">98%</div>
+              <div class="text-xs text-slate-500 mt-1">Call capture rate</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">&lt;2s</div>
+              <div class="text-xs text-slate-500 mt-1">Average response time</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-white">24/7</div>
+              <div class="text-xs text-slate-500 mt-1">Always available</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden">
+            <img src="https://picsum.photos/seed/ocd-about-team/800/1000.jpg" alt="Business team" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-2xl">
+            <div class="text-3xl font-bold text-sky-400">500+</div>
+            <div class="text-sm text-slate-400 mt-1">Businesses served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ARTICLE 1 ============ -->
+  <div id="page-article-1" class="page hidden">
+    <article class="pt-32 pb-24 px-6">
+      <div class="max-w-3xl mx-auto page-transition">
+        <a href="#home" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-sky-400 transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Articles
+        </a>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">Communication</span>
+          <span class="text-xs text-slate-500">5 min read</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-serif tracking-tight leading-[1.15] mb-6">Why Most Local Businesses Lose Customers Before They Even Answer</h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-8">Discover how missed calls, slow responses, and outdated communication systems quietly cost businesses new customers every week — and what you can do about it.</p>
+        <div class="aspect-[16/9] rounded-xl overflow-hidden mb-12">
+          <img src="https://picsum.photos/seed/ocd-missed-calls-hero/1200/675.jpg" alt="Two people standing on gray tile paving" class="w-full h-full object-cover">
+        </div>
+
+        <div class="article-body">
+          <p>Here's a number that should keep every business owner up at night: <strong class="text-white">62% of calls to small businesses go unanswered.</strong> Not voicemailed — unanswered. No ring, no response, no opportunity captured. The caller moves on, finds a competitor, and the business owner never even knows it happened.</p>
+
+          <p>This isn't a rare edge case. It's the daily reality for thousands of local businesses — plumbers, dentists, law firms, roofing companies, salons. And the financial impact is staggering when you do the math.</p>
+
+          <h2>The True Cost of a Missed Call</h2>
+
+          <p>Let's say your average customer is worth $500 over their lifetime. If you miss just five calls per week — a conservative estimate for most service businesses — that's 260 missed opportunities per year. At a conservative 20% conversion rate, you're looking at <strong class="text-white">$26,000 in lost annual revenue</strong> from missed calls alone.</p>
+
+          <p>But the damage doesn't stop there. Missed calls create a compounding problem:</p>
+
+          <ul>
+            <li><strong class="text-white">Immediate loss:</strong> The caller finds someone else, likely within minutes.</li>
+            <li><strong class="text-white">Reputation damage:</strong> Unanswered calls lead to negative reviews and word-of-mouth complaints.</li>
+            <li><strong class="text-white">Wasted marketing spend:</strong> You're paying for ads or SEO that generate calls you can't handle.</li>
+            <li><strong class="text-white">Data gap:</strong> You have no record of who called, when, or what they needed — so you can't follow up.</li>
+          </ul>
+
+          <h2>Why It Happens (It's Not What You Think)</h2>
+
+          <p>Most business owners don't ignore calls on purpose. The problem is structural. You're on a job site. You're with a client. It's after hours. Your receptionist is at lunch. The phone rings, and there's simply no one available to pick it up.</p>
+
+          <p>The traditional solutions don't work either. Voicemail seems fine in theory, but <strong class="text-white">80% of callers won't leave a voicemail</strong> when they reach an automated system. They perceive it as impersonal and move on. Forwarding to a cell phone creates its own problems — interruptions during client work, background noise sounding unprofessional, and still missing calls when you genuinely can't answer.</p>
+
+          <blockquote>
+            "The businesses that win aren't the ones with the best services. They're the ones that answer the phone when a new customer calls."
+          </blockquote>
+
+          <h2>The Solution: Always-On Communication</h2>
+
+          <p>The fix isn't hiring more staff or working longer hours. It's building a communication system that works even when you don't.</p>
+
+          <h3>1. AI-Powered Call Answering</h3>
+          <p>Modern AI receptionists can answer calls in your business's name, handle common questions, capture lead information, and even book appointments directly into your calendar — all in real time, 24 hours a day. The technology has advanced to the point where many callers can't tell they're not speaking with a human.</p>
+
+          <h3>2. Instant SMS Follow-Up on Missed Calls</h3>
+          <p>When a call does go to voicemail, an automated text message can be sent within seconds: "Hi, this is [Your Business]. We missed your call but want to help. What can we assist you with?" This simple touchpoint dramatically increases the chance of re-engaging the caller before they find a competitor.</p>
+
+          <h3>3. Centralized Communication Dashboard</h3>
+          <p>Instead of scattered voicemails, sticky notes, and phone logs, a single dashboard gives you visibility into every call and text interaction. You see who called, what they needed, and whether they were booked — all in one place, accessible from your phone or computer.</p>
+
+          <h2>Where to Start</h2>
+
+          <p>You don't need to overhaul everything at once. Start with this simple audit:</p>
+
+          <ul>
+            <li>Call your own business number from a different phone. How many rings before it goes to voicemail? What does the greeting sound like?</li>
+            <li>Check your call logs from last month. How many calls went unanswered? Multiply that number by your average customer value.</li>
+            <li>Ask yourself: "If a new customer called right now while I'm busy, what would their experience be?"</li>
+          </ul>
+
+          <p>The gap between where your communication is and where it needs to be is where your competitors are winning. Closing that gap doesn't require a massive investment — it requires a system that ensures every call gets a response, every time.</p>
+
+          <p><strong class="text-white">Your next customer is going to call. The only question is whether someone will be there to answer.</strong></p>
+        </div>
+
+        <!-- Article Footer -->
+        <div class="mt-16 pt-8 border-t border-slate-800">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <a href="#article-2" class="text-sm text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-2">
+              Next: How AI Is Changing Customer Service →
+            </a>
+            <a href="#home" class="text-sm text-slate-500 hover:text-white transition-colors">← All Articles</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ ARTICLE 2 ============ -->
+  <div id="page-article-2" class="page hidden">
+    <article class="pt-32 pb-24 px-6">
+      <div class="max-w-3xl mx-auto page-transition">
+        <a href="#home" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-sky-400 transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Articles
+        </a>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">AI & Automation</span>
+          <span class="text-xs text-slate-500">6 min read</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-serif tracking-tight leading-[1.15] mb-6">How AI Is Changing Customer Service for Small Businesses</h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-8">See how AI-powered receptionists, automated follow-ups, and instant responses help businesses provide better service without increasing payroll.</p>
+        <div class="aspect-[16/9] rounded-xl overflow-hidden mb-12">
+          <img src="https://picsum.photos/seed/ocd-ai-laptops-hero/1200/675.jpg" alt="People sitting with laptop computers" class="w-full h-full object-cover">
+        </div>
+
+        <div class="article-body">
+          <p>Two years ago, if you told a local business owner they'd have an AI answering their phones, most would have laughed. Today, it's becoming the competitive standard — and the businesses that adopt it early are seeing results that feel almost unfair.</p>
+
+          <p>But let's be clear about something: <strong class="text-white">AI in customer service isn't about replacing humans.</strong> It's about handling the 80% of interactions that are repetitive, predictable, and time-sensitive — so your human team can focus on the 20% that actually requires a personal touch.</p>
+
+          <h2>What AI Customer Service Actually Looks Like</h2>
+
+          <p>Forget the clunky chatbots from five years ago that couldn't understand basic questions. Modern AI customer service for small businesses operates on three practical fronts:</p>
+
+          <h3>AI Voice Receptionists</h3>
+          <p>When a customer calls your business, an AI voice agent answers in your company's name with a natural, conversational tone. It can answer common questions ("What are your hours?" "What areas do you serve?"), collect caller information, explain pricing basics, and book appointments directly into your calendar. If the caller needs something the AI can't handle, it seamlessly transfers to a human — with full context of the conversation so the caller doesn't have to repeat themselves.</p>
+
+          <h3>Automated SMS Follow-Ups</h3>
+          <p>Every missed call triggers an automatic text message within seconds. Every new appointment gets a confirmation text. Every no-show gets a gentle reminder. These aren't generic blasts — they're context-aware messages triggered by specific actions, making each one feel personal and relevant.</p>
+
+          <h3>Intelligent Call Routing</h3>
+          <p>AI can prioritize calls based on urgency and value. A first-time caller inquiring about your most profitable service gets routed to you immediately. A routine question about hours gets handled by the AI. You stop interrupting client work for calls that didn't need you in the first place.</p>
+
+          <h2>The Business Case: By the Numbers</h2>
+
+          <p>Let's look at what this actually means for a typical local service business doing $50,000–$200,000 in annual revenue:</p>
+
+          <ul>
+            <li><strong class="text-white">3x more calls converted:</strong> Businesses using AI receptionists report converting 60–70% of inbound calls, compared to 20–30% with voicemail alone.</li>
+            <li><strong class="text-white">$15,000–$40,000 in recovered revenue:</strong> From calls that would have been missed or lost to voicemail.</li>
+            <li><strong class="text-white">10+ hours per week saved:</strong> By eliminating manual call screening, appointment scheduling, and follow-up texts.</li>
+            <li><strong class="text-white">24/7 availability at a fraction of the cost:</strong> An AI receptionist costs less per month than a single day of a human receptionist's wages.</li>
+          </ul>
+
+          <blockquote>
+            "The businesses winning today aren't outworking their competitors. They're out-systeming them."
+          </blockquote>
+
+          <h2>Common Concerns (And Why They Don't Hold Up)</h2>
+
+          <h3>"My customers want to talk to a real person."</h3>
+          <p>They want to talk to someone who can help them. When your only alternative is voicemail or a ringing phone that nobody answers, AI is dramatically better than both. And for complex situations, good AI systems include a seamless handoff to a human.</p>
+
+          <h3>"AI will make my business sound robotic."</h3>
+          <p>Modern voice AI uses natural language processing that handles conversational speech, pauses, and context shifts. Many businesses report that callers don't realize they're speaking with AI until they're told. The key is working with a provider who customizes your script and voice to match your brand.</p>
+
+          <h3>"It's too complicated for my business."</h3>
+          <p>If you can use a smartphone, you can use modern AI receptionist services. Setup typically takes under an hour. You forward your business line, customize your script, connect your calendar, and it's live. Most providers handle the technical integration entirely.</p>
+
+          <h2>How to Implement AI Without Disrupting Your Business</h2>
+
+          <p>The smartest approach is phased adoption:</p>
+
+          <ul>
+            <li><strong class="text-white">Week 1:</strong> Start with SMS follow-up on missed calls only. Zero disruption to your existing call flow, but you immediately start recovering missed leads.</li>
+            <li><strong class="text-white">Week 2–3:</strong> Add the AI voice receptionist for after-hours calls. This is low-risk because those calls are currently going to voicemail anyway.</li>
+            <li><strong class="text-white">Week 4:</strong> Review your dashboard data. Look at call volumes, conversion rates, and customer feedback. Then decide whether to extend AI to business hours or keep it as an after-hours and overflow system.</li>
+          </ul>
+
+          <p>The businesses that get the best results treat AI as a team member, not a gadget. They refine the script based on real conversations, adjust the routing logic based on call patterns, and continuously improve based on the data their system collects.</p>
+
+          <p><strong class="text-white">AI isn't coming for your business. Your competitors who use AI are. The question is whether you'll be early or late to the party.</strong></p>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-slate-800">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="flex gap-6">
+              <a href="#article-1" class="text-sm text-slate-500 hover:text-white transition-colors">← Previous Article</a>
+              <a href="#article-3" class="text-sm text-sky-400 hover:text-sky-300 transition-colors flex items-center gap-2">
+                Next: Five Website Mistakes →
+              </a>
+            </div>
+            <a href="#home" class="text-sm text-slate-500 hover:text-white transition-colors">← All Articles</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ ARTICLE 3 ============ -->
+  <div id="page-article-3" class="page hidden">
+    <article class="pt-32 pb-24 px-6">
+      <div class="max-w-3xl mx-auto page-transition">
+        <a href="#home" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-sky-400 transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Articles
+        </a>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full">Web Presence</span>
+          <span class="text-xs text-slate-500">7 min read</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-serif tracking-tight leading-[1.15] mb-6">Five Website Mistakes That Drive Potential Customers Away</h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-8">Learn the most common issues that hurt conversions, from slow loading times to confusing layouts, and how small improvements can make a big impact.</p>
+        <div class="aspect-[16/9] rounded-xl overflow-hidden mb-12">
+          <img src="https://picsum.photos/seed/ocd-website-mistakes-hero/1200/675.jpg" alt="Website on a screen" class="w-full h-full object-cover">
+        </div>
+
+        <div class="article-body">
+          <p>Your website is your hardest-working employee. It shows up every day, never takes a vacation, and is often the first impression a potential customer has of your business. The problem? Most local business websites are actively driving customers away — not because they're ugly, but because they're failing at basic fundamentals.</p>
+
+          <p>Here are the five most damaging website mistakes we see, and exactly how to fix each one.</p>
+
+          <h2>1. Slow Loading Times</h2>
+
+          <p>Every second your website takes to load, you lose visitors. <strong class="text-white">53% of mobile users abandon a site that takes longer than 3 seconds to load.</strong> For a local business that might get 500 visitors per month, that's 265 people who left before they even saw what you offer.</p>
+
+          <p>The most common culprits are uncompressed images, bloated themes or plugins, and no caching. The fixes are straightforward:</p>
+
+          <ul>
+            <li>Compress all images using tools like TinyPNG or Squoosh before uploading them.</li>
+            <li>Remove any plugins or scripts you're not actively using.</li>
+            <li>Implement browser caching and use a CDN (Content Delivery Network).</li>
+            <li>Test your site with Google PageSpeed Insights and aim for a score above 80 on mobile.</li>
+          </ul>
+
+          <h2>2. No Clear Call to Action Above the Fold</h2>
+
+          <p>"Above the fold" means what a visitor sees without scrolling. If a new visitor lands on your site and can't figure out what to do within 3 seconds, they'll leave. This is called the "3-second rule," and most local business websites fail it spectacularly.</p>
+
+          <p>Common failures include:</p>
+
+          <ul>
+            <li>A vague headline like "Welcome to Our Website" instead of "Reliable Plumbing in Orange County — Same Day Service"</li>
+            <li>No visible phone number or "Book Now" button above the fold</li>
+            <li>A carousel slider that hides your most important message behind rotation</li>
+            <li>Too many competing elements fighting for attention</li>
+          </ul>
+
+          <p><strong class="text-white">The fix:</strong> Put your phone number in the top-right corner of every page. Below your headline, include one primary action button — "Call Now," "Book Appointment," or "Get a Free Quote." Make it impossible to miss.</p>
+
+          <h2>3. Not Mobile-Optimized</h2>
+
+          <p>Over 60% of local business searches happen on mobile devices. If your website doesn't look and function perfectly on a phone screen, you're effectively turning away the majority of your potential customers.</p>
+
+          <p>But "mobile-friendly" isn't enough anymore. You need mobile-optimized. The difference matters:</p>
+
+          <ul>
+            <li><strong class="text-white">Mobile-friendly:</strong> Your site doesn't break on a phone. Text is readable. Buttons are tappable.</li>
+            <li><strong class="text-white">Mobile-optimized:</strong> Your site is designed for mobile-first. Click-to-call buttons are prominent. Forms are short. The most important information is at the top. Loading is fast on cellular connections.</li>
+          </ul>
+
+          <p>Test your site on an actual phone — not by resizing your desktop browser. Navigate it as a customer would. Try to find your phone number, book an appointment, and get your address. If any of those take more than two taps, you have work to do.</p>
+
+          <h2>4. Missing or Hard-to-Find Contact Information</h2>
+
+          <p>This one seems too obvious to be a problem, yet it's one of the most common issues we find. Business owners bury their phone number on a "Contact Us" page that requires three clicks to reach. Some don't even have a phone number on their website at all — only a contact form.</p>
+
+          <blockquote>
+            "Every page on your website should make it effortless for a customer to contact you. If it isn't, you're making it effortless for them to find someone else."
+          </blockquote>
+
+          <p><strong class="text-white">The fix:</strong> Your phone number should appear in your header, above the fold on your homepage, in your footer, and on every page of your site. Make it clickable on mobile (using a tel: link) so customers can call with a single tap. Include your business hours, address, and a simple contact form — but never as the only way to reach you.</p>
+
+          <h2>5. No Social Proof or Trust Signals</h2>
+
+          <p>When a potential customer lands on your site, they're asking themselves one question: "Can I trust this business?" If your site doesn't answer that question immediately, they'll go to your competitor's site — which probably does.</p>
+
+          <p>Effective trust signals include:</p>
+
+          <ul>
+            <li><strong class="text-white">Customer reviews:</strong> Pull in your Google reviews and display them prominently. Even 3–5 reviews on your homepage make a significant difference.</li>
+            <li><strong class="text-white">Professional photos:</strong> Stock photos of handshakes tell customers nothing. Real photos of your team, your work, and your office build credibility.</li>
+            <li><strong class="text-white">Credentials and certifications:</strong> Licenses, awards, industry affiliations, and "As Seen On" logos all contribute to trust.</li>
+            <li><strong class="text-white">Clear pricing or pricing ranges:</strong> Even a general range ("Services starting at $X") reduces anxiety and filters out non-qualified leads.</li>
+          </ul>
+
+          <h2>The One-Week Website Fix</h2>
+
+          <p>You don't need a full redesign to address these issues. Here's a practical one-week plan:</p>
+
+          <ul>
+            <li><strong class="text-white">Monday:</strong> Run your site through PageSpeed Insights. Fix the top 3 performance issues.</li>
+            <li><strong class="text-white">Tuesday:</strong> Rewrite your homepage headline and add a clear call-to-action button above the fold.</li>
+            <li><strong class="text-white">Wednesday:</strong> Test your site on a phone and fix any mobile usability issues.</li>
+            <li><strong class="text-white">Thursday:</strong> Add your phone number to the header, footer, and homepage. Make it clickable.</li>
+            <li><strong class="text-white">Friday:</strong> Add 3–5 customer reviews and at least one trust signal to your homepage.</li>
+          </ul>
+
+          <p>Five days of focused work. No agency needed. No thousands of dollars spent. Just fixing the leaks in your digital front door.</p>
+
+          <p><strong class="text-white">Your website doesn't need to be perfect. It needs to be functional, fast, and trustworthy. Fix these five mistakes, and you'll immediately stop losing customers who were already trying to find you.</strong></p>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-slate-800">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <a href="#article-2" class="text-sm text-slate-500 hover:text-white transition-colors">← Previous Article</a>
+            <a href="#home" class="text-sm text-slate-500 hover:text-white transition-colors">← All Articles</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ============ CONTACT PAGE ============ -->
+  <div id="page-contact" class="page hidden">
+    <section class="pt-32 pb-24 px-6">
+      <div class="max-w-3xl mx-auto page-transition">
+        <a href="#home" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-sky-400 transition-colors mb-8">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Home
+        </a>
+        <span class="text-xs font-semibold uppercase tracking-widest text-sky-400 mb-4 block">Get in Touch</span>
+        <h1 class="text-3xl md:text-5xl font-serif tracking-tight mb-4">Let's Talk About Your Business</h1>
+        <p class="text-lg text-slate-400 leading-relaxed mb-12">Whether you're tired of missing calls, curious about AI for your business, or just want to ask a question — we're here.</p>
+
+        <div class="grid md:grid-cols-5 gap-12">
+          <div class="md:col-span-3">
+            <form id="contact-form" class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                  <input type="text" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Your name">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-300 mb-2">Business Name</label>
+                  <input type="text" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="Your business">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                <input type="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="you@yourbusiness.com">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2">Phone</label>
+                <input type="tel" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" placeholder="(555) 123-4567">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2">What can we help with?</label>
+                <textarea rows="5" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors resize-none" placeholder="Tell us about your business and what you're looking to improve..."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white py-3.5 text-sm font-semibold rounded-lg transition-colors duration-150">Send Message</button>
+            </form>
+            <p id="contact-msg" class="text-sm text-sky-400 mt-4 hidden"></p>
+          </div>
+          <div class="md:col-span-2 space-y-8">
+            <div>
+              <h3 class="text-sm font-semibold text-white mb-3">Services</h3>
+              <ul class="space-y-2 text-sm text-slate-400">
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  AI Voice Receptionist
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  AI SMS Follow-Up
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Full Coverage Package
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white mb-3">Location</h3>
+              <p class="text-sm text-slate-400">Orange County, New York<br>Serving businesses nationwide</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white mb-3">Response Time</h3>
+              <p class="text-sm text-slate-400">We typically respond within a few hours during business hours. For urgent inquiries, call us directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ FOOTER (always visible) ============ -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 bg-sky-500 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-sm">OC</span>
+            </div>
+            <span class="text-sm font-semibold tracking-tight text-white">Orange County Digital</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed max-w-sm">AI-powered communication solutions for local businesses. Capture every call, follow up instantly, and never lose a lead again.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Articles</h4>
+          <ul class="space-y-2">
+            <li><a href="#article-1" class="text-sm text-slate-500 hover:text-sky-400 transition-colors">Missed Calls Cost</a></li>
+            <li><a href="#article-2" class="text-sm text-slate-500 hover:text-sky-400 transition-colors">AI for Small Business</a></li>
+            <li><a href="#article-3" class="text-sm text-slate-500 hover:text-sky-400 transition-colors">Website Mistakes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-sm text-slate-500 hover:text-sky-400 transition-colors">About</a></li>
+            <li><a href="#contact" class="text-sm text-slate-500 hover:text-sky-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-slate-600">&copy; 2025 Orange County Digital. All rights reserved.</p>
+        <p class="text-xs text-slate-600">Orange County, New York</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Router =====
+    const pages = {
+      'home': document.getElementById('page-home'),
+      'article-1': document.getElementById('page-article-1'),
+      'article-2': document.getElementById('page-article-2'),
+      'article-3': document.getElementById('page-article-3'),
+      'contact': document.getElementById('page-contact'),
+    };
+
+    function navigate(hash) {
+      const key = hash.replace('#', '') || 'home';
+      const page = pages[key];
+
+      if (!page) {
+        // Default to home for unknown routes
+        Object.values(pages).forEach(p => p.classList.add('hidden'));
+        pages['home'].classList.remove('hidden');
+        return;
+      }
+
+      Object.values(pages).forEach(p => p.classList.add('hidden'));
+      page.classList.remove('hidden');
+
+      // Re-trigger animation
+      const animEl = page.querySelector('.page-transition');
+      if (animEl) {
+        animEl.style.animation = 'none';
+        animEl.offsetHeight; // force reflow
+        animEl.style.animation = '';
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      // Update active nav link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href').replace('#', '');
+        if (href === key || (key.startsWith('article') && href === 'article-1')) {
+          link.classList.remove('text-slate-400');
+          link.classList.add('text-white');
+        } else {
+          link.classList.remove('text-white');
+          link.classList.add('text-slate-400');
+        }
+      });
+    }
+
+    window.addEventListener('hashchange', () => navigate(location.hash));
+    window.addEventListener('DOMContentLoaded', () => navigate(location.hash));
+
+    // ===== Mobile Menu =====
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // ===== Newsletter Form =====
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = document.getElementById('newsletter-msg');
+      const email = document.getElementById('newsletter-email').value;
+      msg.textContent = `Thanks! We'll send insights to ${email}.`;
+      msg.classList.remove('hidden');
+      this.reset();
+      setTimeout(() => msg.classList.add('hidden'), 5000);
+    });
+
+    // ===== Contact Form =====
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = document.getElementById('contact-msg');
+      msg.textContent = 'Message sent! We\'ll get back to you shortly.';
+      msg.classList.remove('hidden');
+      this.reset();
+      setTimeout(() => msg.classList.add('hidden'), 5000);
+    });
+
+    // ===== Navbar background on scroll =====
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('shadow-lg');
+      } else {
+        nav.classList.remove('shadow-lg');
+      }
+    });
+  </script>
+</body>
+</html>
