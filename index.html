@@ -612,7 +612,7 @@
         </div>
       </div>
       <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-slate-600">&copy; 2025 Orange County Digital. All rights reserved.</p>
+        <p class="text-xs text-slate-600">&copy; 2026 Orange County Digital. All rights reserved.</p>
         <p class="text-xs text-slate-600">Orange County, New York</p>
       </div>
     </div>
@@ -679,17 +679,6 @@
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
       });
-    });
-
-    // ===== Newsletter Form =====
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const msg = document.getElementById('newsletter-msg');
-      const email = document.getElementById('newsletter-email').value;
-      msg.textContent = `Thanks! We'll send insights to ${email}.`;
-      msg.classList.remove('hidden');
-      this.reset();
-      setTimeout(() => msg.classList.add('hidden'), 5000);
     });
 
     // ===== Contact Form =====
